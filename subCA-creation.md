@@ -35,12 +35,14 @@ Add Root CA certificates and CRL list into Local Certificate Store.
 - export the subca certificate file and import into SubCA Server. 
 
 Configure Certificate Revocation and CA Certificate Validity Periods
+
 12. certutil -setreg CA\CRLPeriodUnits 1
 13. certutil -setreg CA\CRLPeriod "Weeks"
 14. certutil -setreg CA\CRLDeltaPeriodUnits 1
 15. certutil -setreg CA\CRLDeltaPeriod "Days"
 
 Define CRL overlap settings: 
+
 16. certutil -setreg CA\CRLOverlapPeriodUnits 12
 17. certutil -setreg CA\CRLOverlapPeriod "Hours" 
 
