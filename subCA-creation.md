@@ -33,7 +33,6 @@ Transfer the .req file to RootCA machine to request for a certificate.
 Go to ADCS console. Right-click on CA server name and hover to all task, submit new request. 
 Go to pending request, refresh and find the submitted request, rightclick and select issue. 
 export the subca certificate file and import into SubCA Server. 
-`
 
 Configure Certificate Revocation and CA Certificate Validity Periods
 12. certutil -setreg CA\CRLPeriodUnits 1
