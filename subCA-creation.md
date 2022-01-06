@@ -27,12 +27,12 @@ Add Root CA certificates and CRL list into Local Certificate Store.
 10. certutil.exe -addstore -f root "C:\filename.crt"
 11. certutil.exe -addstore -f root "C:\filename.crl"
 
-Configure ADCS for SubordinateCA. look at https://www.youtube.com/watch?v=wUnHAE2uM3o @08:10 timing.
-Save the generated SubCA on the machine. Check the filename should be a .req file. 
-Transfer the .req file to RootCA machine to request for a certificate. 
-Go to ADCS console. Right-click on CA server name and hover to all task, submit new request. 
-Go to pending request, refresh and find the submitted request, rightclick and select issue. 
-export the subca certificate file and import into SubCA Server. 
+- Configure ADCS for SubordinateCA. look at https://www.youtube.com/watch?v=wUnHAE2uM3o @08:10 timing.
+- Save the generated SubCA on the machine. Check the filename should be a .req file. 
+- Transfer the .req file to RootCA machine to request for a certificate. 
+- Go to ADCS console. Right-click on CA server name and hover to all task, submit new request. 
+- Go to pending request, refresh and find the submitted request, rightclick and select issue. 
+- export the subca certificate file and import into SubCA Server. 
 
 Configure Certificate Revocation and CA Certificate Validity Periods
 12. certutil -setreg CA\CRLPeriodUnits 1
