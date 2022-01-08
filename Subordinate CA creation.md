@@ -1,6 +1,8 @@
 1. notepad C:\Windows\CAPolicy.inf
-2. ![image](https://user-images.githubusercontent.com/59461655/148338282-b0f278e7-611a-4be2-bf44-b452e4264363.png)
-3. Add the below to the opened file.
+
+![image](https://user-images.githubusercontent.com/59461655/148338282-b0f278e7-611a-4be2-bf44-b452e4264363.png)
+
+2. Add the below to the opened file.
 ```bash
 [Version]
 Signature="$Windows NT$"
@@ -19,11 +21,11 @@ LoadDefaultTemplates=0
 6. Copy the 2 files to the 2nd CA server. 
 7. Need to register the 2 files using Windows Powershell. 
 
-Publish root CA certificates and CRL list in AD
+# Publish root CA certificates and CRL list in AD
 8. certutil.exe -dsPublish -f "C:\filename.crt" RootCA
 9. certutil.exe -dsPublish -f "C:\filename.crl" RootCA
 
-Add Root CA certificates and CRL list into Local Certificate Store. 
+# Add Root CA certificates and CRL list into Local Certificate Store. 
 10. certutil.exe -addstore -f root "C:\filename.crt"
 11. certutil.exe -addstore -f root "C:\filename.crl"
 
@@ -34,14 +36,14 @@ Add Root CA certificates and CRL list into Local Certificate Store.
 - Go to pending request, refresh and find the submitted request, rightclick and select issue. 
 - export the subca certificate file and import into SubCA Server. 
 
-Configure Certificate Revocation and CA Certificate Validity Periods
+# Configure Certificate Revocation and CA Certificate Validity Periods
 
 12. certutil -setreg CA\CRLPeriodUnits 1
 13. certutil -setreg CA\CRLPeriod "Weeks"
 14. certutil -setreg CA\CRLDeltaPeriodUnits 1
 15. certutil -setreg CA\CRLDeltaPeriod "Days"
 
-Define CRL overlap settings: 
+# Define CRL overlap settings: 
 
 16. certutil -setreg CA\CRLOverlapPeriodUnits 12
 17. certutil -setreg CA\CRLOverlapPeriod "Hours" 
